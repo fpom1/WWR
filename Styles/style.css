@@ -1,47 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 div {
     max-width: 1600px;
 }
+
 #content {
     margin: 0 auto;
 }
-nav a{
+
+nav a, .button-box, #hero-msg h1, #hero-msg h4, main section{
     text-align: center;
-}
-#hero-msg h1 {
-    text-align: center;
-}
-#hero-msg h4{
-    text-align: center;
-}
-.button-box {
-    text-align: center;
-}
-main section {
-    text-align: center;
-}
-#background {
-    height: 725px;
-    background-color: #970b1A;
 }
 
-body{
-    background-color: #ffffff;
+nav a {
+    text-decoration: none;;
+    text-align: center;
+    padding: 30px;
+    margin: 5px;
 }
-header{
-    background-color: #EECC11;
+
+main section img {
+    box-sizing: border-box;
 }
-nav a:hover{
-    background-color: #FFFFFF;
-}
-.book, .join{
-    background-color: #FFFFFF;
-}
-.book:hover, .join:hover{
-    background-color: #970b1A;
-}
+
 .msg{
+    margin-block:120px;
+    padding:20px;
+}
+
+.card-img {
+    border: 10px solid #970B1A;
+}
+#background, .book:hover, .join:hover{
+    height: 725px;
+    background-color: #970B1A;
+}
+
+nav a:hover, .book, .join, footer{
+    background-color: #FFFFFF;
+}
+
+header, .msg{
     background-color: #EECC11;
 }
-footer{
-    background-color: #ffffff;
+
+h1{font-family: Papyrus, fantasy, sans-serif ; font-size: 32px; font-style: large; font-variant: large; font-weight: 800; line-height: 40px; color: #332020}
+h4,p,nav{font-family: Papyrus, fantasy, sans-serif ; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 24px;}
+h2{font-family: Papyrus, fantasy, sans-serif ; font-size: 32px; font-style: large; font-variant: large; font-weight: 800; line-height: 20px; color: #332020; padding-bottom: 36px}
+
+.social{
+    padding-top: 25px;
+    margin: 0px;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: papyrus, Arial, sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+footer{    
+    background-color: #EECC11;
+    font-family: papyrus, Arial, sans-serif;
+    font-size: 22px;
+    margin: 0px;
+    padding: 15px;
 }
