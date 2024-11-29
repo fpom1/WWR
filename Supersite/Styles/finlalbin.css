@@ -45,7 +45,9 @@ a:visited{
 a:hover {
     color: var(--nav-hover-link-color);
 }
-
+.profile_column{
+    margin-right:50px;
+}
 .game_cell_data{
     font-family:var(--paragraph-font)
 }
