@@ -67,7 +67,9 @@ footer{
 .game_cell{
     padding-bottom:30px;
 }
-
+.main_logo{
+    float: left;
+}
 
 
 
