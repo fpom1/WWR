@@ -23,17 +23,16 @@
   }
 
 .main_page.mode_column .columns{min-height:400px;display:flex;align-items:flex-start}
-.main_page.mode_column .columns>*{position:sticky;top:10px}@media (max-width: 800px){.main_page.mode_column .columns>*{position:sticky}}
 .text_header{
     font:var(--heading-font);
-    color: var(--headline-color-on-white)
+    color: var(--headline-color-on-white);
+    border-bottom: 1px solid #dadada;
 }
 
 .user_page_wrap{
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 80px;
+  padding-inline: 12px;
 }
 a:link, a:visited{
     color: var(--nav-link-color);
@@ -41,36 +40,25 @@ a:link, a:visited{
 a:hover {
     color: var(--nav-hover-link-color);
 }
-.profile_column{
+.description_column{
     margin-right:60px;
     font-family: var(--paragraph-font);
-}
-.game_cell_data{
-    font-family:var(--paragraph-font)
-}
-.link_group{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.links_box{
-    display: flex;
-    gap: 2px 12px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom:20px;
 }
 footer{
   border-top: 1px solid #dadada;
   font-size: 12px;
 }
-.game_cell{
-    padding-bottom:30px;
-}
-.main_logo{
-    float: left;
-}
-
+.btn {
+    background-color: var(--nav-link-color);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .btn:hover {
+    background-color: var(--nav-hover-link-color);
+  }
 
 
 
