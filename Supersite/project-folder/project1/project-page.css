@@ -32,7 +32,7 @@
 .user_page_wrap{
   justify-content: center;
   align-items: center;
-  padding-inline: 12px;
+  padding-inline: 60px;
 }
 a:link, a:visited{
     color: var(--nav-link-color);
