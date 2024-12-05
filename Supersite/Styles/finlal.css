@@ -20,6 +20,7 @@
     --nav-hover-link-color: #85A6CB;
     --nav-hover-background-color: #FFFFFF;
     --nav-visited-color:#C74B20;
+    --super-background-color:#C5B9AD;
   }
 
 .main_page.mode_column .columns{min-height:400px;display:flex;align-items:flex-start}
@@ -28,6 +29,7 @@
     font:var(--heading-font);
     color: var(--headline-color-on-white)
 }
+
 
 .user_page_wrap{
   display: flex;
