@@ -4,21 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Russell M. Nelson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
     <style>
         /* Insert styles here, this is called an internal stylesheet  */
         body {
             background: #FFECD7;
+            height: 100%;
+            margin: 0;
+            display: flex; /* Makes the body a flex container */
+            justify-content: center; /* Centers horizontally */
+            align-items: center;
+        }
+        .color-square {
+            width: 400px;
+            height: 650px;
+            background-color: #008DB1; 
+            border-radius: 5%;
+            margin-top: 40px;
+            border: 5px solid #004E63;
         }
         img {
-            display: block;
-            margin: 0 auto;
-            max-width: 300px;
+            position: absolute;
+            top: 23%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            border: 5px solid #FFFFFF;
+        }
+        h1 {
+            font: helvetica;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        a {
+            position: absolute;
+            top: 16%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            font: Helvetica;
+            text-align: center;
+            color: #91E4FB;
+            text-decoration: none;
+        }
+        ul{
+            position: absolute;
+            top: 66%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            font: Helvetica;
+            text-align: center;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        h5{
+            position: absolute;
+            top: 79%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            font-family: "Nanum Brush Script", cursive;
+            src: url(sansation_light.woff);
+            text-align: center;
+            color: #FFD783;
+            text-decoration: none;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <main>
-        <img src="images/russell_nelson.png" alt="product">
+        <div class="color-square" >
+            <h1>Russell M Nelson</h1>
+            <img src="images/russell_nelson.png" alt="product">
+            <a href="https://www.churchofjesuschrist.org/?lang=eng">
+                17th President of the Church of Jesus<br>
+                Christ of Latter-day Saints
+            </a>
+            <ul>
+                <li>Born: Sep 9, 1924</li>
+                <li>Apostle: Apr 7, 1984</li>
+                <li>Prophet: Jan 14, 2018</li>
+            </ul>
+            <h5>
+                “I urge you to devote time each week —<br>
+                for the rest of your life — to increase<br>
+                your understanding of the Atonement of<br>
+                Jesus Christ.”
+            </h5>
+        </div>
     </main>
 </body>
 </html>
