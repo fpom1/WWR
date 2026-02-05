@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 
-div {
+div #content{
     max-width: 1600px;
 }
 
@@ -65,7 +65,10 @@ body {
 footer{    
     background-color: #EECC11;
     font-family: papyrus, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 1.2em;
     margin: 0px;
     padding: 15px;
+}
+a{
+    text-decoration: none;
 }
