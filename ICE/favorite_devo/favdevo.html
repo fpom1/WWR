@@ -11,12 +11,89 @@
     <header class="header">
       <div class="header-image">
         <h1>My Favorite<br>Devotionals</h1>
+        <body>
+
+<p>To understand the example better, we have added borders to the table.</p>
+
+</body>
+</html>
       </div>
     </header>
     <main>
       <div class="content-box">
-        <!-- Add your devotional content here -->
-         Add your table and your form here.
+        Devotionals
+        <table>
+          <tr>
+            <th>Speaker</th>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Date</th>
+          </tr>
+          <tr>
+            <td>Elder Quentin L. Cook and Sister Mary Cook</td>
+            <td>Love and Belonging</td>
+            <td>Worldwide Devotional for Young Adults</td>
+            <td>November 19, 2023</td>
+          </tr>
+          <tr>
+            <td>Elder D. Todd Christofferson</td>
+            <td>Choice and Commitment</td>
+            <td>Worldwide Devotional for Young Adults</td>
+            <td>January 12, 2020</td>
+          </tr>
+          <tr>
+            <td>President Russell M. Nelson</td>
+            <td>Prophets, Leadership, and Divine Law</td>
+            <td>An Evening with President Russell M. Nelson Worldwide Devotional for Young Adults</td>
+            <td>January 8, 2017</td>
+          </tr>
+        </table>
+          
+        <form action="/my-handling-form-page" method="post">
+          <p>
+            <label for="name">Speaker</label>
+            <input type="text" id="name" name="Speaker" />
+          </p>
+          <p>
+            <label for="mail">Title</label>
+            <input type="text" id="Title" name="Title" />
+          </p>
+          <p>
+            <label for="msg">Location</label>
+            <input type="text" id="Location" name="Location" />
+          </p>
+          <p>
+            <label for="msg">Date</label>
+            <input type="text" id="Date" name="Date" />
+          </p>
+        </form>
+
+        <p class="myButton">
+          <button id="myButton" type="submit">submit</button>
+        </p>
+
+        </form>
+
+        <div id="feedback"> </div>
+
+
+<script>
+
+function myFunction() {
+  function displayText(text) {
+  // Using innerHTML to modify the content of an existing element
+  document.getElementById("feedback").innerHTML = text;
+}
+displayText("thank you for your submission"); 
+}
+
+// Get the button element by its ID
+const button = document.getElementById("myButton");
+
+// Add an event listener to the button
+button.addEventListener("click", myFunction);
+</script>
+
       </div>
     </main>
   </div>
