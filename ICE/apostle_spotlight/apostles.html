@@ -1,14 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apostles Spotlights</title>
-    <style>
-        /* Insert styles here */
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid With Different Images</title>
+
+<style>
+  :root {
+    --cols: 4;
+    --rows: 3;
+    --cell-size: 120px;
+    --gap: 40px;
+    --grid-border: 10px;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+  }
+
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell-size));
+  grid-template-rows: repeat(var(--rows), var(--cell-size));
+  gap: var(--gap);
+  padding: var(--gap);
+  border: var(--grid-border) solid #333;
+
+  /* Background image settings */
+  background-image: url("images/christus.webp"); /* Change to your image */
+  background-size: cover;        /* Fill entire container */
+  background-position: center;   /* Center image */
+  background-repeat: no-repeat;  /* Prevent tiling */
+}
+
+.grid-item {
+  border: 5px solid #FFFFFF;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  border-color: #ff6b6b; /* Change to any hover color you like */
+  transform: scale(1.05); /* Optional: slight grow effect */
+}
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+</style>
 </head>
+
 <body>
-    <!-- Insert HTML elements here -->
+
+<div class="grid-container" id="grid"></div>
+
+<script>
+  const styles = getComputedStyle(document.documentElement);
+  const cols = parseInt(styles.getPropertyValue('--cols'));
+  const rows = parseInt(styles.getPropertyValue('--rows'));
+
+  const grid = document.getElementById("grid");
+
+  // Replace these with your actual image paths
+  const images = [
+    "images/anderson.webp",
+    "images/bednar.webp",
+    "images/causse.webp",
+    "images/christofferson.webp",
+    "images/cook.webp",
+    "images/eyring.webp",
+    "images/gong.webp",
+    "images/holland.webp",
+    "images/kearon.webp",
+    "images/rasband.webp",
+    "images/renlund.webp",
+    "images/uchtdorf.webp"
+  ];
+
+  for (let i = 0; i < cols * rows; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("grid-item");
+
+    const img = document.createElement("img");
+    img.src = images[i % images.length];
+    img.alt = "Grid Image " + (i + 1);
+
+    cell.appendChild(img);
+    grid.appendChild(cell);
+  }
+</script>
+
 </body>
 </html>
