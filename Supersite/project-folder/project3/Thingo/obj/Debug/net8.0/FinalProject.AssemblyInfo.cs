@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FinalProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a75e002963cb033ec1b3cbf03e2949deac4fbbb")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84a2fe7e49ab0c0f165b28b44af283d6d7198f0f")]
+>>>>>>> parent of 46f2e7e (primal reversion)
 [assembly: System.Reflection.AssemblyProductAttribute("FinalProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FinalProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
