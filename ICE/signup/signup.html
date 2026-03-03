@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        :root {
+            --cols: 5;
+            --rows: 1;
+            --cell-size: 80px;
+            --top-cell-size: 120px;
+            --gap: 5px;
+            --grid-border: 10px;
+        }
+
+        body {
+            background: rgb(120, 96, 64);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Card container */
+        .formContainer {
+            position: relative;
+            width: 400px;
+            background: white;
+            border-radius: 5%;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+            padding-top: 180px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid blue;
+        }
+
+        /* Image wrapper */
+        .container {
+            position: absolute;
+            top: 0px;
+            /* Pull image upward */
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        /* Image */
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Heading */
+        h3 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        #closeBtn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            border-radius: 50%;
+            border: none;
+            width: 28px;
+            height: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-container1 {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(5, 1fr);
+            /* 5 equal columns */
+            gap: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .grid-item {
+            width: 100%;
+            aspect-ratio: 200 / 267;
+            overflow: hidden;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="formContainer" id="formContainer">
+        <div class="container">
+            <img src="images/jesus_feeds_5000.jpeg" alt="product">
+        </div>
+        <h3>Sign Up for Daily Scripture Feed</h3>
+        <form id="myForm">
+            <button type="button" id="closeBtn">X</button>
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <section>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </section>
+
+            <section>
+                <input type="checkbox" id="conditions" name="conditions" required>
+                <label for="conditions">I acknowledge the terms and conditions</label>
+            </section>
+
+            <section>
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+        <div class="grid-container1" id="grid1"></div>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+        });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Here is the data that would be sent to the server:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+        });
+        const styles = getComputedStyle(document.documentElement);
+        const cols = parseInt(styles.getPropertyValue('--cols'));
+        const rows = parseInt(styles.getPropertyValue('--rows'));
+
+        // Images for main grid
+        const mainImages = [
+            "images/old_testament.webp",
+            "images/new_testament.webp",
+            "images/book_of_mormon.webp",
+            "images/doctrine_and_covenants.webp",
+            "images/pearl_of_great_price.webp"
+        ];
+
+        function populateGrid(gridId, imagesArray) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = ""; // clear existing content
+
+            for (let i = 0; i < imagesArray.length; i++) {
+                const cell = document.createElement("div");
+                cell.classList.add("grid-item");
+
+                const img = document.createElement("img");
+                img.src = imagesArray[i];
+                img.alt = "Grid Image " + (i + 1);
+
+                cell.appendChild(img);
+                grid.appendChild(cell);
+            }
+        }
+        // Populate bottom grid
+        populateGrid("grid1", mainImages.slice(0, cols * rows));
+    </script>
+
+</body>
+
+</html>
